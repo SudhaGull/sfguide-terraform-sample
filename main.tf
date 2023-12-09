@@ -8,8 +8,11 @@ terraform {
 }
 
 provider "snowflake" {
-  account = ${env.SNOWFLAKE_ACCOUNT}
-  role ="SYSADMIN"
+  user = env("SNOWFLAKE_USERNAME")
+  password = env("SNOWFLAKE_PRIVATE_KEY")
+  account = env("SNOWFLAKE_ACCOUNT")
+  authenticator = env("SNOWFLAKE_AUTHENTICATOR")
+  role = "SYSADMIN"
 }
 
 resource "snowflake_database" "db" {
