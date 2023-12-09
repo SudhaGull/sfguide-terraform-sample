@@ -8,6 +8,7 @@ terraform {
 }
 
 provider "snowflake" {
+  account = ${env.SNOWFLAKE_ACCOUNT}
   role ="SYSADMIN"
 }
 
