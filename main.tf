@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "snowflake" {
-  user = env("SNOWFLAKE_USERNAME")
+  user = env("SNOWFLAKE_USER")
   password = env("SNOWFLAKE_PRIVATE_KEY")
   account = env("SNOWFLAKE_ACCOUNT")
   authenticator = env("SNOWFLAKE_AUTHENTICATOR")
